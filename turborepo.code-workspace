@@ -1,0 +1,25 @@
+{
+  "folders": [
+    {
+      "name": "✨ turborepo-lib",
+      "path": "."
+    },
+    {
+      "name": "🚀 docs",
+      "path": "apps/docs"
+    },
+    {
+      "name": "🚀 web",
+      "path": "apps/web"
+    },
+    {
+      "name": "📦 @littlesmart3/color-picker",
+      "path": "packages/ui/color-picker"
+    },
+    {
+      "name": "📦 @littlesmart3/color-picker-vue3",
+      "path": "packages/ui/color-picker-vue3"
+    }
+  ],
+  "settings": {}
+}
