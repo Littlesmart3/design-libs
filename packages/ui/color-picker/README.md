@@ -1,0 +1,1 @@
+[A Collection of Color Pickers from Sketch, Photoshop, Chrome, Github, Twitter, Material Design & more](http://casesandberg.github.io/react-color/)
