@@ -19,11 +19,11 @@ const defaultColorList = [
   { color: '#5300eb' },
 ];
 
-interface Iprops {
+interface IProps {
   setColor: any;
 }
 
-const GitHub: FC<Iprops> = (props) => {
+const GitHub: FC<IProps> = (props) => {
   function outOfPopup(e: any) {
     // console.log(e, 9999);
   }

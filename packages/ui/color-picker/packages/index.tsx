@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import Wrapper from './components/wrapper';
+import Wrapper from './modules/wrapper';
 import './assets/style/index.less';
 
 export type ColorPickerType = 'github' | 'block';

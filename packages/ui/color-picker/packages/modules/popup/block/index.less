@@ -1,0 +1,47 @@
+.color-picker__popup-block {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: calc(-200px / 2 + 50%);
+  width: 200px;
+  // height: 100px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  &-preview {
+    height: 100px;
+    background-color: #000;
+    border-radius: 6px 6px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+    }
+  }
+  &-panel {
+    position: relative;
+    &-default-color-list {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 10px 0 0 10px;
+      &-item {
+        height: 0;
+        box-sizing: content-box;
+        width: calc(20% - 10px);
+        padding-bottom: calc(20% - 10px);
+        border-radius: 4px;
+        margin: 0 10px 10px 0;
+        // &:nth-child(5n) {
+        //   margin: 0 0 10px 0;
+        // }
+      }
+    }
+    &-input {
+      padding: 10px;
+    }
+  }
+}

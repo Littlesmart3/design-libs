@@ -1,5 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import GithubModule from '../popup/github/index';
+import BlockModule from '../popup/block/index';
 import { ColorPickerType } from '../../index';
 import './index.less';
 
@@ -31,6 +32,8 @@ const Wrapper: FC<IProps> = (props) => {
     switch (type) {
       case 'github':
         return <GithubModule setColor={setColorValue} />;
+      case 'block':
+        return <BlockModule setColor={setColorValue} />;
       default:
         return null;
     }

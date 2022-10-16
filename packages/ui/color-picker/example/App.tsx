@@ -5,7 +5,7 @@ import './index.less';
 const App: FC<{}> = () => {
   return (
     <div className="example">
-      <ColorPicker type="github" />
+      <ColorPicker type="block" />
     </div>
   );
 };
