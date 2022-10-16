@@ -1,11 +1,11 @@
-import { FC, useState } from "react";
-import Wrapper from "./components/wrapper";
-import "./assets/style/index.less";
+import { FC, useState } from 'react';
+import Wrapper from './components/wrapper';
+import './assets/style/index.less';
 
+export type ColorPickerType = 'github' | 'block';
 interface IProps {
-  type: "button" | "color";
+  type: ColorPickerType;
 }
-
 const App: FC<IProps> = (props) => {
   return (
     <div className="color-picker">

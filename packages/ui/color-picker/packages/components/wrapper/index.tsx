@@ -1,9 +1,10 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import GithubModule from '../popup/github/index';
+import { ColorPickerType } from '../../index';
 import './index.less';
 
 interface IProps {
-  type: 'button' | 'color';
+  type: ColorPickerType;
 }
 
 const Wrapper: FC<IProps> = (props) => {
@@ -14,19 +15,26 @@ const Wrapper: FC<IProps> = (props) => {
     GithubModuleRef: useRef<HTMLDivElement>(null),
   };
 
-  // 点击color-picker
-  function handleClick() {
-    setPopupVisible(!popupVisible);
-  }
-
   // 监听鼠标是否点击到color-picker外面
   useEffect(() => {
-    const setPopupVisibleFalse = (e: any) => {
-      if (!e.path.includes(refs.GithubModuleRef.current)) setPopupVisible(false);
-    };
-    if (popupVisible) document.addEventListener('mousedown', (e) => setPopupVisibleFalse(e));
-    else document.removeEventListener('mousedown', setPopupVisibleFalse);
+    function isInPopup(e: any) {
+      if (!e.path.includes(refs.GithubModuleRef.current) && !e.path.includes(refs.wrapperButtonRef.current)) {
+        setPopupVisible(false);
+      }
+    }
+
+    if (popupVisible) document.addEventListener('mousedown', isInPopup);
+    return () => document.removeEventListener('mousedown', isInPopup);
   }, [popupVisible]);
+
+  const getPickerElement = (type: ColorPickerType) => {
+    switch (type) {
+      case 'github':
+        return <GithubModule setColor={setColorValue} />;
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="color-picker__wrapper">
@@ -34,10 +42,10 @@ const Wrapper: FC<IProps> = (props) => {
         className="color-picker__wrapper-button"
         style={{ backgroundColor: colorValue }}
         ref={refs.wrapperButtonRef}
-        onClick={handleClick}
+        onClick={() => setPopupVisible(!popupVisible)}
       />
       <div ref={refs.GithubModuleRef} className="color-picker__wrapper-popup-module">
-        {popupVisible ? <GithubModule setColor={setColorValue} /> : null}
+        {popupVisible ? getPickerElement(props.type) : null}
       </div>
     </div>
   );

@@ -1,16 +1,17 @@
-import { FC, useState } from "react";
-import "./index.less";
+import { FC, useState } from 'react';
+import './index.less';
 
 interface IProps {
-  type: "button" | "color";
+  type: 'button' | 'color';
 }
 
-const Wrapper: FC<IProps> = (props) => {
+const Block: FC<IProps> = (props) => {
   return (
-    <div className="color-picker__wrapper">
-      <div className="color-picker__wrapper-button"></div>
+    <div className="color-picker__popup-block">
+      <div className="color-picker__popup-block-preview">123</div>
+      <div className="color-picker__popup-block-panel">456</div>
     </div>
   );
 };
 
-export default Wrapper;
+export default Block;
