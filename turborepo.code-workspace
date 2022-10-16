@@ -5,14 +5,6 @@
       "path": "."
     },
     {
-      "name": "🚀 docs",
-      "path": "apps/docs"
-    },
-    {
-      "name": "🚀 web",
-      "path": "apps/web"
-    },
-    {
       "name": "📦 @littlesmart3/color-picker",
       "path": "packages/ui/color-picker"
     },
